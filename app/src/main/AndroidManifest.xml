@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.shenkangyun.recoveryproject">
+
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 允许读取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许读取wifi网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 拨打电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".BaseFolder.MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logintitle"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginPage.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainPage.MainActivity" />
+        <activity
+            android:name=".ToolPage.Activity.ToolDetailsActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".CalendarPage.CalenderInfoActivity" />
+        <activity android:name=".CalendarPage.CalenderEditingActivity" />
+        <activity android:name=".CommunityPage.PublishInfoActivity" />
+        <activity android:name=".CommunityPage.CommunityInfoActivity" />
+        <activity android:name=".MinePage.AboutActivity" />
+        <activity android:name=".MinePage.ChangeWordActivity" />
+        <activity android:name=".MinePage.MinePageActivity" />
+
+        <receiver
+            android:name=".UtilsFolder.NetworkChangeReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="w8O6a3BepbIRZWjFDFtvWb2NTF1StWFQ" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.shenkangyun.recoveryproject.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".HomePage.Activity.ChildrenActivity" />
+        <activity android:name=".HomePage.Activity.ChildrenInfoActivity" />
+        <activity android:name=".HomePage.Activity.VisionActivity" />
+        <activity android:name=".HomePage.Activity.VisionInfoActivity" />
+        <activity android:name=".HomePage.Activity.HearingActivity" />
+        <activity android:name=".HomePage.Activity.HearingInfoActivity" />
+        <activity android:name=".HomePage.Activity.LimbsActivity" />
+        <activity android:name=".HomePage.Activity.LimbsInfoActivity" />
+        <activity android:name=".HomePage.Activity.SpiritActivity" />
+        <activity android:name=".HomePage.Activity.SpiritInfoActivity" />
+        <activity android:name=".HomePage.Activity.IntelligenceActivity" />
+        <activity android:name=".HomePage.Activity.IntelligenceInfoActivity" />
+        <activity android:name=".HomePage.Activity.SpeechActivity" />
+        <activity android:name=".HomePage.Activity.SpeechInfoActivity" />
+        <activity android:name=".HomePage.Activity.PreventionActivity" />
+        <activity android:name=".HomePage.Activity.PregnantActivity" />
+        <activity android:name=".HomePage.Activity.ReportActivity" />
+        <activity android:name=".HomePage.Activity.PolicyActivity" />
+        <activity android:name=".HomePage.Activity.AdaptationActivity" />
+        <activity android:name=".HomePage.Activity.PositionInfoActivity" />
+        <activity android:name=".HomePage.Activity.DiagnosisActivity" />
+        <activity android:name=".HomePage.Activity.FavouredPolicyActivity" />
+        <activity android:name=".HomePage.Activity.StreetActivity" />
+        <activity android:name=".HomePage.Activity.ClinicActivity" />
+        <activity android:name=".HomePage.Activity.FavouredInfoActivity" />
+        <activity android:name=".HomePage.Activity.ServiceActivity"></activity>
+    </application>
+
+</manifest>
